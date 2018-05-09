@@ -1,0 +1,3 @@
+C:\Tutorial\RazorPagesMovie\RazorPagesMovie\obj\Debug\netcoreapp2.0\RazorPagesMovie.csproj.CoreCompileInputs.cache
+C:\Tutorial\RazorPagesMovie\RazorPagesMovie\obj\Debug\netcoreapp2.0\RazorPagesMovie.AssemblyInfoInputs.cache
+C:\Tutorial\RazorPagesMovie\RazorPagesMovie\obj\Debug\netcoreapp2.0\RazorPagesMovie.AssemblyInfo.cs
