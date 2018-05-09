@@ -4,13 +4,24 @@
     ViewData["Title"] = Model.IsNewRecipe ? "New Recipe" : "Edit Recipe";
 }
 
-<form method="post" class="form-horizontal">
+@if (!ModelState.IsValid)
+{ 
+    <div class="col-md-offset-2 col-md-10">
+        <h3 class="text-danger">Validation Errors</h3>
+        <div asp-validation-summary="All"></div>
+        <hr />
+    </div>
+}
+
+
+<form method="post" class="form-horizontal" enctype="multipart/form-data">
     <div class="form-group">
         <div class="col-md-10">
             <label asp-for="Recipe.Name"></label>
             <input asp-for="Recipe.Name"
                    type="text"
                    class="form-control" />
+            <span asp-validation-for="Recipe.Name"></span>
         </div>
     </div>
     <div class="form-group">        
@@ -19,6 +30,7 @@
             <textarea asp-for="Recipe.Ingredients"
                       rows="5"
                       class="form-control"></textarea>
+            <span asp-validation-for="Recipe.Ingredients"></span>
         </div>
     </div>
     <div class="form-group">        
@@ -27,6 +39,7 @@
             <textarea asp-for="Recipe.Directions"
                       rows="5"
                       class="form-control"></textarea>
+            <span asp-validation-for="Recipe.Directions"></span>
         </div>
     </div>
     <div class="form-group">        
@@ -35,8 +48,13 @@
             <textarea asp-for="Recipe.Description"
                       rows="3"
                       class="form-control"></textarea>
+            <span asp-validation-for="Recipe.Description"></span>
         </div>
     </div>
+
+    <label asp-for="Image"></label>
+    <input type="file" asp-for="Image" />
+
     <div class="form-group">
         <div class="col-md-10">
             <button type="submit"
